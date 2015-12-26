@@ -1,0 +1,6 @@
+E:\Programming\Software\C#\Assembler\Assembler\Assembler\bin\Debug\Assembler.exe.config
+E:\Programming\Software\C#\Assembler\Assembler\Assembler\bin\Debug\Assembler.exe
+E:\Programming\Software\C#\Assembler\Assembler\Assembler\bin\Debug\Assembler.pdb
+E:\Programming\Software\C#\Assembler\Assembler\Assembler\obj\Debug\Assembler.csprojResolveAssemblyReference.cache
+E:\Programming\Software\C#\Assembler\Assembler\Assembler\obj\Debug\Assembler.exe
+E:\Programming\Software\C#\Assembler\Assembler\Assembler\obj\Debug\Assembler.pdb

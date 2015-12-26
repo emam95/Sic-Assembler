@@ -1,0 +1,46 @@
+remn     start   1000
+         lda     bnum
+         div     snum
+         sta     temp
+         org     evenlab
+         mul     snum
+         sta     result
+try      lda     bnum
+         sub     result
+         add     =5
+         sub     =x'04'
+         sta     result
+         lda     zero
+         org     try
+tryb     comp    result
+         jeq     evenlab
+         ltorg          
+         lda     zero
+         lda     =c'js'
+         sta     even
+         lda     one
+new      equ     tryb - try
+newa     equ     tryb + try
+newb     equ     try + 2
+newc     equ     try - 3
+newd     equ     3 - try
+newe     equ     one
+newf     equ     try
+newg     equ     8
+newj     equ     tryb + tryb - tryb
+         sta     new
+evenlab  lda     one
+         sta     even
+         lda     zero
+         org            
+         sta     odd
+         j       endlab
+bnum     word    10
+snum     word    2
+result   resw    1
+even     resw    1
+odd      resw    1
+temp     word    0
+zero     word    0
+one      word    1
+endlab   end     remn

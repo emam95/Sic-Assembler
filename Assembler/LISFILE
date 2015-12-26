@@ -1,0 +1,53 @@
+1000        remn     start  1000
+1000 00102A          lda    bnum
+1003 24102D          div    snum
+1006 0C1039          sta    temp
+                     org    evenlab
+origin value is not identified
+1009 20102D          mul    snum
+100C 0C1030          sta    result
+100F 00102A try      lda    bnum
+1012 1C1030          sub    result
+1015 181015          add    =5
+1018 1C1018          sub    =x'04'
+101B 0C1030          sta    result
+101E 00103C          lda    zero
+                     org    try
+100F 281030 tryb     comp   result
+1012 301028          jeq    evenlab
+1015                 ltorg         
+1015 000005 *        5      
+1018 000004 *        x'04'  
+1019 00103C          lda    zero
+101C 001042          lda    =c'js'
+101F 0C1033          sta    even
+1022 00103F          lda    one
+            new      equ    tryb - try
+            newa     equ    tryb + try
+invalid expression
+            newb     equ    try + 2
+            newc     equ    try - 3
+            newd     equ    3 - try
+invalid expression
+            newe     equ    one
+invalid expression
+            newf     equ    try
+            newg     equ    8
+            newj     equ    tryb + tryb - tryb
+1025 0C0000          sta    new
+1028 00103F evenlab  lda    one
+102B 0C1033          sta    even
+102E 00103C          lda    zero
+                     org           
+1024 0C1036          sta    odd
+1027 3C1042          j      endlab
+102A 00000A bnum     word   10
+102D 000002 snum     word   2
+1030        result   resw   1
+1033        even     resw   1
+1036        odd      resw   1
+1039 000000 temp     word   0
+103C 000000 zero     word   0
+103F 000001 one      word   1
+1042        endlab   end    remn
+1042 6A73   *        c'js'  
