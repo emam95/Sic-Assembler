@@ -14,7 +14,7 @@ origin value is not identified
 101E 00103C          lda    zero
                      org    try
 100F 281030 tryb     comp   result
-1012 301028          jeq    evenlab
+1012 30102B          jeq    evenlab
 1015                 ltorg         
 1015 000005 *        5      
 1018 000004 *        x'04'  
@@ -33,11 +33,13 @@ invalid expression
 invalid expression
             newf     equ    try
             newg     equ    8
-            newj     equ    tryb + tryb - tryb
+            newh     equ    tryb + tryb - tryb
+            newi     equ    *
 1025 0C0000          sta    new
-1028 00103F evenlab  lda    one
-102B 0C1033          sta    even
-102E 00103C          lda    zero
+1028 001025          lda    newi
+102B 00103F evenlab  lda    one
+102E 0C1033          sta    even
+1031 00103C          lda    zero
                      org           
 1024 0C1036          sta    odd
 1027 3C1042          j      endlab

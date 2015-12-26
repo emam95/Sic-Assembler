@@ -27,8 +27,10 @@ newd     equ     3 - try
 newe     equ     one
 newf     equ     try
 newg     equ     8
-newj     equ     tryb + tryb - tryb
+newh     equ     tryb + tryb - tryb
+newi     equ     *
          sta     new
+         lda     newi
 evenlab  lda     one
          sta     even
          lda     zero

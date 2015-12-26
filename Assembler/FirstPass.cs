@@ -77,7 +77,7 @@ namespace Assembler
                         }
                         else
                         {
-                            string expVal = evaluateExp(inst.Operand);
+                            string expVal = evaluateExp(inst.Operand , LOOCTR);
                             string newAdd = "";
                             if(expVal.Equals("e"))
                             {
@@ -231,7 +231,7 @@ namespace Assembler
                         {
                             if(!evaluateExp(inst.Operand).Equals("e"))
                             {
-                                symTab.Add(inst.Label, evaluateExp(inst.Operand));
+                                symTab.Add(inst.Label, evaluateExp(inst.Operand,LOOCTR));
                                 program.Add(inst);
                                 instRead++;
                                 line = fileReader.ReadLine();
@@ -279,8 +279,10 @@ namespace Assembler
             get { return litTab; }
         }
 
-        private string evaluateExp(string exp)
+        private string evaluateExp(string exp, string looctr = "")
         {
+            if (exp.Trim().Equals("*"))
+                return looctr;
             string value = "0";
             int x = 0;
             int nSymbols = 0;
