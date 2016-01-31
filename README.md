@@ -1,2 +1,2 @@
 # Sic-Assembler
-a C# sic assembler with literals , org and equ functionality
+a sic assembler written in C#
